@@ -41,6 +41,7 @@ router.post('/', async (req, res) => {
     res.status(500).json({ error: 'Failed to create task' });
   }
 });
+
 //DELETE /api/tasks/:id Delete a task by ID Public
 router.delete('/:id', async (req, res) => {
   try {
