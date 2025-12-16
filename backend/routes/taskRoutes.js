@@ -2,9 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Task = require('../models/Task');
 
-// @route   GET /api/tasks
-// @desc    Get all tasks
-// @access  Public
+//GET /api/tasks Get all tasks Public
 router.get('/', async (req, res) => {
   try {
     const tasks = await Task.find().sort({ createdAt: -1 });
@@ -15,9 +13,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-// @route   POST /api/tasks
-// @desc    Create a new task
-// @access  Public
+//POST /api/tasks Create a new task Public
 router.post('/', async (req, res) => {
   try {
     const { title } = req.body;
@@ -45,10 +41,7 @@ router.post('/', async (req, res) => {
     res.status(500).json({ error: 'Failed to create task' });
   }
 });
-
-// @route   DELETE /api/tasks/:id
-// @desc    Delete a task
-// @access  Public
+//DELETE /api/tasks/:id Delete a task by ID Public
 router.delete('/:id', async (req, res) => {
   try {
     const { id } = req.params;
