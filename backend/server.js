@@ -23,8 +23,8 @@ app.use((req, res, next) => {
 app.use(express.json());
 
 // MongoDB Connection
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/taskmanager';
-mongoose.connect(MONGODB_URI)
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://bassnaidu_db_user:am0fVhX8UqghjHCe@cluster0.wqov6mt.mongodb.net/?appName=Cluster0';
+mongoose.connect("mongodb+srv://bassnaidu_db_user:am0fVhX8UqghjHCe@cluster0.wqov6mt.mongodb.net/?appName=Cluster0")
   .then(() => console.log('✅ MongoDB Connected'))
   .catch(err => {
     console.error('❌ MongoDB Connection Error:', err.message);
